@@ -1,0 +1,28 @@
+version: "3.3"
+
+services:
+  
+  db:
+    image: postgres:10-alpine
+    restart: always
+    ports:
+      - "5432:5430"
+    environment:
+      POSTGRES_USER: "postgres"
+      POSTGRES_PASSWORD: "postgres"
+      POSTGRES_DB: "bitcoin_api"
+    # volumes:
+      # - database-data:/var/lib/postgresql/data/
+
+  bitcoin_api:
+    build: .
+    image: gelight/bitcoin_api
+    ports:
+      - 9000:9000
+    volumes:
+      - ./service/src:/app/src
+    depends_on:
+      - db
+
+# volumes:
+  # database-data:

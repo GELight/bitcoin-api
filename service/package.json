@@ -1,0 +1,31 @@
+{
+  "private": true,
+  "organization": "GELight",
+  "name": "gelight-bitcoin-api",
+  "version": "0.0.1",
+  "description": "GELight - Bitcoin API",
+  "author": "Mario Linz <gelight@gmx.de>",
+  "main": "build/src/service.js",
+  "scripts": {
+    "start": "node build/src/service.js",
+    "build": "tsc"
+  },
+  "dependencies": {
+    "brain.js": "^1.6.1",
+    "express": "^4.17.1",
+    "log4js": "^4.4.0",
+    "node-watch": "^0.6.2",
+    "pg": "^7.12.1",
+    "pg-hstore": "^2.3.3",
+    "request": "^2.88.0",
+    "request-promise": "^4.2.4",
+    "sequelize": "^5.18.3",
+    "uuid": "^3.3.2"
+  },
+  "server": {
+    "port": 9000
+  },
+  "devDependencies": {
+    "@types/node": "^13.9.8"
+  }
+}
